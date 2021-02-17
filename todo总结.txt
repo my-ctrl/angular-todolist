@@ -1,0 +1,2 @@
+外部的 先给APP.HTML  再npm i导入css  再在src的css下面导入即可
+app.component.ts中定义的export class AppComponent中的数据，html可以直接访问

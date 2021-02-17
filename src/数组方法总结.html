@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ary = [{
+            id: 1,
+            name: 'aaa'
+        }, {
+            id: 2,
+            name: 'bbb'
+        }, {
+            id: 3,
+            name: 'ccc'
+        }]
+        // forEach不能终止循环，break会报错，return也不能终止循环
+        ary.forEach(item => console.log('forEach', item))
+        // filter 返回的是一个新的数组
+        var ary1 = ary.filter(item => item.name === 'ddd')
+        console.log('filter', ary1)
+
+        // 从数组中查找，只要有一个符合条件的，即返回值为true
+        var someFlag = ary.some(item => item.id === 4)
+        console.log('some', someFlag)
+        // 从数组中查找，第一个符合条件的数组成员
+        var findObject = ary.find(item => item.id === 3)
+        console.log('find', findObject)
+        // 从数组中查找，第一个符合条件的数组成员的位置
+        var findIndexResult = ary.findIndex(item => item.id === 3)
+        console.log('findIndex', findIndexResult)
+
+        // 从数组中查找，每一个都要符合条件，则返回true
+        // 只要有任意一个不符合条件，则终止循环，返回false
+        var everyFlag = ary.every(item => {
+            console.log(item)
+            return item.id >= 1
+        })
+        console.log('every', everyFlag)
+
+        // map，映射
+        // map中函数的返回值，作为新数组的一项
+        var mapAry = ary.map(function (item) {
+            console.log(item)
+            return item.name
+        })
+        console.log('map', mapAry)
+    </script>
+</body>
+
+</html>

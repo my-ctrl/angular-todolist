@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+/* 第三方包可不写路径，直接导入 直接写第三方包名称路径即可 */
+@import url('todomvc-common/base.css');
+@import url('todomvc-app-css/index.css')
